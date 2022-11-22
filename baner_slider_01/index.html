@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Slider/Baner</title>
+</head>
+
+<body>
+    <section class="team">
+        <img src="img/s1.png" alt="girl_1" class="color">
+        <img src="img/s1a.png" alt="girl_1_gray" class="gray">
+        <div class="member">
+            <h1>Anna Baugart</h1>
+            <h2>Programistka JS</h2>
+        </div>
+    </section>
+
+    <script>
+        //Parameters
+        let activeElement = 0;
+
+        //downloaded elements
+        const colorImgHtml = document.querySelector('.color');
+        const grayImgHtml = document.querySelector('.gray');
+        const h1Html = document.querySelector('.member h1');
+        const h2Html = document.querySelector('.member h2');
+
+        //downloaded properties to opperate
+        const colorImages = ['img/s1.png', 'img/s2.png', 'img/s3.png'];
+        const grayImages = ['img/s1a.png', 'img/s2a.png', 'img/s3a.png'];
+        const names = ['Anna Baugart', 'Marek Feliksiak', 'Arek Pawłowicz'];
+        const professions = ['Programistka JS', 'UX i UI Designer', 'Front-End Developer'];
+
+        function changeElement() {
+            activeElement++
+            if (activeElement == colorImages.length) {
+                activeElement = 0;
+            }
+
+            colorImgHtml.src = colorImages[activeElement];
+            grayImgHtml.src = grayImages[activeElement];
+            h1Html.textContent = names[activeElement];
+            h2Html.textContent = professions[activeElement];
+        }
+
+        setInterval(changeElement, 4000)
+    </script>
+</body>
+
+</html>
