@@ -1,0 +1,35 @@
+body {
+    min-height: 150vh;
+}
+
+.wrap {
+    margin: 0 50px;
+}
+
+nav {
+    position: fixed;
+    bottom: -270px;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background-color: #000;
+    transition: .3s linear;
+}
+
+i.fa-solid {
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    font-size: 30px;
+    transition: .3s linear;
+}
+
+
+nav.on {
+    bottom: 0;
+}
+
+i.on {
+    bottom: 320px;
+    transform: rotate(180deg);
+}
